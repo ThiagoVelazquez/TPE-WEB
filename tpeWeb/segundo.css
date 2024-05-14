@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #010C16ff;
+  margin: 20px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #010C16ff;
+  padding: 1rem;
+}
+
+.logo {
+  max-width: 100%;
+  height: auto;
+}
+
+.nav {
+  display: none;
+  flex-direction: column;
+  align-items: end;
+  gap: 1rem;
+}
+
+.lista-nav {
+  display: block;
+  background-color: #010C16ff;
+  padding: 2rem;
+}
+
+.lista-nav li {
+  margin-left: 0;
+  margin-bottom: 1rem;
+}
+
+.lista-nav li a {
+  text-decoration: none;
+  color: white; 
+}
+
+.nav.visible {
+  display: flex;
+}
+
+.abrirmenu,
+.cerrarmenu {
+  display: block;
+}
+
+h1 {
+  text-align: center;
+}
+
+.content-grid {
+  display: flex;
+  flex-direction: column; /* Cambiamos a columna en móvil */
+}
+
+.content-item {
+  color: white;
+  background-color: #010C16ff;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px; /* Agrega un poco de margen inferior entre los elementos */
+}
+
+.content-item p {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 5px solid #BEA06Bff; /* Añade el borde solo a los párrafos dentro de .content-item */
+  border-radius: 10px; /* Ajusta el radio del borde para que coincida con el contenedor */
+}
+
+.content-item img {
+  max-width: 100%;
+  height: 100%;
+  border-radius: 25px;
+}
+
+
+
+@media screen and (min-width: 550px) {
+  .content-grid {
+    flex-direction: row; /* Cambiamos a fila en desktop */
+    justify-content: space-between; /* Distribuye los elementos en el espacio disponible */
+  }
+
+  .content-item {
+    width: calc(50% - 10px); /* El 50% del contenedor menos el espacio entre los elementos */
+    margin-right: 20px; /* Añade un margen derecho para separar los elementos */
+    margin-bottom: 0; /* Elimina el margen inferior en desktop */
+  }
+
+  .content-item:first-child {
+    flex: 0 0 70%; /* El primer párrafo ocupa el 70% del contenedor */
+  }
+
+  .content-item:last-child {
+    flex: 0 0 30%; /* El segundo párrafo ocupa el 30% del contenedor */
+  }
+}
